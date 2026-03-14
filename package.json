@@ -2,8 +2,9 @@
   "name": "cs-465-full-stack-development",
   "version": "1.0.0",
   "description": "Develop and design a full stack application",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/JJSoftwareDev/CS-465-Full-Stack-Development#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "hbs": "^4.2.0"
   }
 }
