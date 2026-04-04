@@ -1,4 +1,4 @@
-require('./app_server/models/db');
+require('./app_api/models/db');
 /* Load required modules
     express= webframework
     path = helps Node find files */
@@ -6,6 +6,7 @@ const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
 const ctrlTravel = require('./app_server/controllers/travel');
+const apiRouter = require('./app_api/routes/index');
 
 /* Create an Express application */
 const app = express();
@@ -32,6 +33,9 @@ app.get('/', (req, res) => {
 
 /* route for the travel page */
 app.get('/travel', ctrlTravel.travel);
+
+/* Use the API router for all routes starting with /api */
+app.use('/api', apiRouter);
 
 /* Start the node server */
 app.listen(port, () => {
