@@ -11,6 +11,9 @@ const apiRouter = require('./app_api/routes/index');
 /* Create an Express application */
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 /* Define the port to run the server on */
 const port = process.env.PORT || 3000;
 

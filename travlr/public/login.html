@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body>
+    <h2>Admin Login</h2>
+
+    <form id="loginForm">
+        <label>Username:</label><br>
+        <input type="text" id="username"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="password"><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await response.json();
+
+            if (data.token) {
+                document.getElementById("result").innerText = "Login successful!";
+                localStorage.setItem("token", data.token);
+                console.log("Token saved:", data.token);
+            } else {
+                document.getElementById("result").innerText = "Login failed.";
+            }
+        });
+    </script>
+</body>
+</html>
