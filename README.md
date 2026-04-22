@@ -38,7 +38,7 @@ Overall, this helped me understand how endpoints, requests, and security all con
 
 ## Reflection
 
-This course really helped everything click for me when it comes to full stack development. Before this, I understood pieces of it, but now I actually see how it all fits together — frontend, backend, database, and everything in between.
+This course really helped everything click for me when it comes to full stack development. Before this, I understood pieces of it, but now I actually see how it all fits together: frontend, backend, database, and everything in between.
 
 I’ve gotten more comfortable working with APIs, handling JSON data, building reusable components, and adding authentication for security. I also spent a lot of time troubleshooting, which honestly helped me learn the most.
 
